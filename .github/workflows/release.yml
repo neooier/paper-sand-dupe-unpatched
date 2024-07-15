@@ -45,7 +45,7 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           npm install
-          npm start
+          node ./main.js
 
       - name: Load output file to env
         uses: antifree/json-to-variables@v1.0.1
