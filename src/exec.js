@@ -4,7 +4,7 @@ function executeCmd(aCmd, aOpt, aMsg) {
   if (arguments.length === 2 && typeof arguments[1] === "string")
     console.log(arguments[1]);
   if (arguments.length === 3) console.log(aMsg);
-  let opt = { silent: true };
+  let opt = { silent: false };
   if (typeof aOpt === "object") Object.assign(opt, aOpt);
   console.log(`> ${aCmd}`);
   let cmdObj = exec(aCmd, opt);
@@ -16,7 +16,7 @@ function executeCmd(aCmd, aOpt, aMsg) {
 }
 
 function executeCmdS(aCmd, aOpt) {
-  let opt = { silent: true };
+  let opt = { silent: false };
   if (typeof aOpt === "object") Object.assign(opt, aOpt);
   let cmdObj = exec(aCmd, opt);
   if (cmdObj.error) {
